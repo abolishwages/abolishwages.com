@@ -88,7 +88,7 @@ export default function Home() {
                         getting even more unfair with time. The owner class is never 
                         satisfied. They have been waging a one-sided class war for longer
                         than any of us have been alive. It is time for those of us that
-                        actually create value reclaim that value for ourselves.
+                        actually create value to reclaim that value for ourselves.
                     </p>
                 </section>
             </div>
