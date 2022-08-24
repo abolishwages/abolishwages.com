@@ -1,0 +1,146 @@
+// common imports
+@import '../resources/colors';
+@import '../resources/fonts';
+@import '../reset';
+
+// size and overflow
+html, body, #root {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#home {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+// main content
+#content {
+
+    // general styling and dimensions
+    background-color: @color[off-white];
+    width: 100%;
+    min-height: calc(100vh - 64px);
+    max-width: 1200px;
+    margin: auto;
+
+    // borders only when screen is large enough
+    @media (min-width: 1200px) {
+        border-left: 1px solid @color[off-black];
+        border-right: 1px solid @color[off-black];
+    }
+
+    // section padding and dividers
+    section {
+        margin: auto;
+        padding: 24px;
+        position: relative;
+        &::before {
+            content: '';
+            border-top: 1px solid @color[off-black];
+            height: 0px;
+            width: 75%;
+            max-width: 900px;
+            position: absolute;
+            top: 0px;
+            left: 12.5%;
+        }
+        &:first-child {
+            &::before {
+                display: none;
+            }
+        }
+
+        // heading styles
+        & > h2 {
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+
+        // paragraph styles
+        & > p {
+            text-indent: 24px;
+            margin-top: 24px;
+            padding-left: 24px;
+            padding-right: 24px;
+        }
+        &:first-child > p {
+            width: 75%;
+            max-width: 900px;
+            text-align: center;
+        }
+    }
+
+    // intro section
+    #intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        #fancy {
+            font: 48px/1em @font[fancy];
+            animation: rainbow 5s infinite;
+            text-shadow: 0px 0px 2px @color[off-black];
+        }
+    }
+}
+
+// footer
+#footer {
+
+    // general styling and dimensions
+    background-color: @color[off-white];
+    width: 100%;
+    max-width: 1200px;
+    height: 64px;
+    margin: auto;
+    position: relative;
+
+    // flexbox
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // borders only when screen is large enough
+    @media (min-width: 1200px) {
+        border-left: 1px solid @color[off-black];
+        border-right: 1px solid @color[off-black];
+    }
+
+    // footer border
+    #footer-border {
+        border-top: 1px solid @color[off-black];
+        height: 0px;
+        width: 75%;
+        max-width: 900px;
+        position: absolute;
+        top: 0px;
+        left: 12.5%;
+    }
+}
+
+// fancy animation
+@keyframes rainbow {
+    0% {
+        color: @color[dark-red];
+    }
+    17% {
+        color: @color[dark-yellow];
+    }
+    33% {
+        color: @color[dark-green];
+    }
+    50% {
+        color: @color[dark-cyan];
+    }
+    67% {
+        color: @color[dark-blue];
+    }
+    83% {
+        color: @color[dark-magenta];
+    }
+    100% {
+        color: @color[dark-red];
+    }
+}

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+npx lessc src/less/pages/home.less static/styles/home.css
